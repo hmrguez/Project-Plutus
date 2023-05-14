@@ -2,6 +2,9 @@
 
 Este repositorio constituye el repositorio abstracto de los proyectos de programación declarativa del año 2023.
 
+## Requisitos técnicos
+Para la implementación del proyecto puede utilizarse cualquier lenguaje de programación mientras se utilicen principalmente rasgos de programación declarativa. Es parte de la orientación fundamentar su elección de tecnologías para el desarrollo del proyecto.
+
 ## ¿Qué hacer ahora?
 
 1. Crear un **Fork** privado. El nuevo repositorio personal es el que van a utilizar para el control de versiones de su proyecto.
