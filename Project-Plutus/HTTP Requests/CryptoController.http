@@ -1,0 +1,1 @@
+GET https://localhost:7202/Crypto/bitcoin HTTP/1.1

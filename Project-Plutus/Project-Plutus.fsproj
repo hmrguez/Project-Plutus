@@ -6,8 +6,16 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <Compile Include="Controllers\VegetableController.fs" />
+        <Compile Include="Controllers\CryptoController.fs" />
         <Compile Include="Program.fs" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Content Include="HTTP Requests\CryptoController.http" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="7.0.6" />
     </ItemGroup>
 
 </Project>
