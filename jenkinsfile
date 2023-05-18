@@ -16,7 +16,7 @@ pipeline{
             
             steps{
                 echo 'Just fine'
-                sh 'dotnet restore Project-Plutus\\Project-Plutus.fsproj'
+                sh 'dotnet restore Project-Plutus.sln'
                 echo 'Just fine 2'
             }
         
