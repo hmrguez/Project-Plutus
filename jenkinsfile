@@ -2,12 +2,22 @@ pipeline{
 
     agent any
     
+    environment {
+        dotnet = "C:\\Program Files\\dotnet"
+    }
+
+    triggers{
+        pollSCM 'H * * * *'
+    }
+
     stages {
         
-        stage("build"){
+        stage("Restore"){
             
             steps{
-                echo 'building'
+                echo 'Just fine'
+                bat 'dotnet restore Project-Plutus\\Project-Plutus.fsproj'
+                echo 'Just fine 2'
             }
         
         }
