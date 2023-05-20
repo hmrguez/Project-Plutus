@@ -7,14 +7,15 @@ pipeline{
         stage("Restore"){
             
             steps{
+                bat 'dotnet restore'
                 bat 'dotnet build'
             }
         
         }
-        stage("Run"){
+        stage("Test"){
             
             steps{
-                bat 'dotnet run --project Project-Plutus'
+                bat 'dotnet test --project Plutus-Tests'
             }
         
         }
