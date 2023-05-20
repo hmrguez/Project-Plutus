@@ -7,9 +7,7 @@ pipeline{
         stage("Restore"){
             
             steps{
-                echo 'Just fine'
-                sh 'dotnet restore Project-Plutus.sln'
-                echo 'Just fine 2'
+                bat 'dotnet restore Project-Plutus.sln'
             }
         
         }
