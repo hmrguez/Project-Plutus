@@ -15,7 +15,8 @@ pipeline{
         stage("Test"){
             
             steps{
-                bat 'dotnet test --project Plutus-Tests'
+                bat 'cd Plutus-Tests'
+                bat 'dotnet test'
             }
         
         }
