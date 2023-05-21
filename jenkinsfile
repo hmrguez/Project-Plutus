@@ -1,10 +1,14 @@
 pipeline{
 
     agent any
+    
+    triggers {
+        pollSCM('*/5 * * * *')
+    }
 
     stages {
         
-        stage("Restore"){
+        stage("Build"){
             
             steps{
                 bat 'dotnet restore'
@@ -17,8 +21,18 @@ pipeline{
             steps{
                 bat 'cd Plutus-Tests'
                 bat 'dotnet test'
+                bat 'cd ..'
             }
         
+        }
+        
+        stage("Autoupdate") {
+            steps {
+                withCredentials([github(credentialsId: 'github')]) {
+                    bat 'git remote add destination https://github.com/vekt0R-HUB/Project-2023.git'
+                    bat 'git push destination HEAD'
+                }
+            }
         }
       
     }
