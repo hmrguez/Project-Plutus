@@ -28,7 +28,7 @@ pipeline{
         
         stage("Autoupdate") {
             steps {
-                withCredentials([github(credentialsId: 'github')]) {
+                withCredentials([usernamePassword(credentialsId: 'github')]) {
                     bat 'git remote add destination https://github.com/vekt0R-HUB/Project-2023.git'
                     bat 'git push destination HEAD'
                 }
