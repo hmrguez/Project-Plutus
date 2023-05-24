@@ -32,3 +32,10 @@ steps:
   inputs:
     command: 'test'
     projects: 'Plutus-Tests'
+
+- task: Docker@2
+  inputs:
+    containerRegistry: 'docker-hub'
+    repository: 'zealotalgo/plutus'
+    command: 'buildAndPush'
+    Dockerfile: 'dockerfile'
