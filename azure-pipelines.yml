@@ -35,7 +35,7 @@ steps:
 
 - task: CmdLine@2
   inputs:
-    script: 'git push https://github.com/vekt0R-HUB/Project-2023'
+    script: 'git push https://github.com/vekt0R-HUB/Project-2023 HEAD:main'
 
 # - task: Docker@2
 #   inputs:
