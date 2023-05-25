@@ -33,10 +33,14 @@ steps:
     command: 'test'
     projects: 'Plutus-Tests'
 
-- task: Docker@2
+- task: CmdLine@2
   inputs:
-    containerRegistry: 'docker-hub'
-    repository: 'zealotalgo/plutus'
-    command: 'buildAndPush'
-    Dockerfile: 'dockerfile'
-    arguments: '--rm --no-cache'
+    script: 'git push https://github.com/vekt0R-HUB/Project-2023'
+
+# - task: Docker@2
+#   inputs:
+#     containerRegistry: 'docker-hub'
+#     repository: 'zealotalgo/plutus'
+#     command: 'buildAndPush'
+#     Dockerfile: 'dockerfile'
+#     arguments: '--rm --no-cache'
