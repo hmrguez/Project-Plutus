@@ -39,3 +39,4 @@ steps:
     repository: 'zealotalgo/plutus'
     command: 'buildAndPush'
     Dockerfile: 'dockerfile'
+    arguments: '--rm --no-cache'

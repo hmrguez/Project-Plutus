@@ -1,6 +1,7 @@
 # Build stage
 FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
 WORKDIR /source
+RUN ls
 COPY . .
 RUN dotnet restore "./Project-Plutus/Project-Plutus.fsproj" --disable-parallel
 RUN dotnet publish "./Project-Plutus/Project-Plutus.fsproj" -c release -o /app --no-restore
