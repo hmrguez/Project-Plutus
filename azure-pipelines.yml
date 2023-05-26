@@ -33,10 +33,16 @@ steps:
     command: 'test'
     projects: 'Plutus-Tests'
     
-- task: Docker@2
-  inputs:
-    containerRegistry: 'docker-hub'
-    repository: 'zealotalgo/project-plutus'
-    command: 'build'
-    Dockerfile: 'dockerfile'
-    buildContext: '**'
+# - task: Docker@2
+#   inputs:
+#     containerRegistry: 'docker-hub'
+#     repository: 'zealotalgo/project-plutus'
+#     command: 'build'
+#     Dockerfile: 'dockerfile'
+#     buildContext: '**'
+    
+# - task: Bash@3
+#   inputs:
+#     targetType: 'inline'
+#     script: |
+#       echo Hello, world!
