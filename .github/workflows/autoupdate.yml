@@ -15,11 +15,11 @@ jobs:
         uses: actions/checkout@v2
         with:
           ref: main
-          repository: owner/repo1
+          repository: vekt0R-HUB/Project-Plutus
       - name: Push changes
         uses: ad-m/github-push-action@master
         with: 
-          github_token: ${{secrets.GITHUB_TOKEN}}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
           branch: main
-          repository: owner/repo2
+          repository: vekt0R-HUB/Project-2023
         
