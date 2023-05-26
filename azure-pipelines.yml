@@ -37,6 +37,6 @@ steps:
   inputs:
     containerRegistry: 'docker-hub'
     repository: 'zealotalgo/project-plutus'
-    command: 'buildAndPush'
+    command: 'build'
     Dockerfile: 'dockerfile'
     buildContext: '**'
