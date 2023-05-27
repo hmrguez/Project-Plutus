@@ -17,7 +17,7 @@ type CoinControllerTests() =
         let name = "bitcoin"
 
         // Act
-        let result = controller.Get(name)
+        let result = controller.GetPrice(name)
         
         // Assert
         result.Should().NotBeNull("Because it was correct").And.BeOfType<OkObjectResult>("Because it was correct")
@@ -25,14 +25,38 @@ type CoinControllerTests() =
         
     [<Fact>]
 
-    member this. ``Get Crypto Price for Invalid Name returns BadRequest``() =
+    member this. ``Get Crypto Price for Invalid Name returns NotFound``() =
         // Arrange
         let name = "invalid-name"
 
         // Act
-        let result = controller.Get(name)
+        let result = controller.GetPrice(name)
 
         // Assert
-        result.Should().NotBeNull("Because it was correct").And.BeOfType<BadRequestObjectResult>("Because it was not a coin")
+        result.Should().NotBeNull("Because it was correct").And.BeOfType<NotFoundObjectResult>("Because it was not a coin")
+        
+    [<Fact>]
+    member this.``Get Crypto History for Bitcoin returns Ok with Price``() =
+        // Arrange
+        let name = "bitcoin"
+
+        // Act
+        let result = controller.GetHistory(name)
+        
+        // Assert
+        result.Should().NotBeNull("Because it was correct").And.BeOfType<OkObjectResult>("Because it was correct")
+    
+        
+    [<Fact>]
+
+    member this. ``Get Crypto History for Invalid Name returns NotFound``() =
+        // Arrange
+        let name = "invalid-name"
+
+        // Act
+        let result = controller.GetHistory(name)
+
+        // Assert
+        result.Should().NotBeNull("Because it was correct").And.BeOfType<NotFoundObjectResult>("Because it was not a coin")
 
     

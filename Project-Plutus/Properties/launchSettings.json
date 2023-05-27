@@ -23,7 +23,7 @@
       "commandName": "Project",
       "dotnetRunMessages": true,
       "launchBrowser": true,
-      "launchUrl": "vegetable",
+      "launchUrl": "coin/price/bitcoin",
       "applicationUrl": "https://localhost:7202;http://localhost:5155",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
