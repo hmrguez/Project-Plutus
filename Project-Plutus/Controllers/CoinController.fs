@@ -1,10 +1,19 @@
 namespace Project_Plutus.Controllers
 
 open System
+open System.IO
+open System.Net
 open System.Net.Http
 open Microsoft.AspNetCore.Http.HttpResults
 open Microsoft.AspNetCore.Mvc
 open Newtonsoft.Json.Linq
+
+type Coin =
+    { id: string
+      symbol: string
+      name: string
+      current_price: float
+      price_change_percentage_24h_in_currency: float }
 
 [<ApiController>]
 [<Route("[controller]")>]
@@ -37,3 +46,21 @@ type CoinController() =
                 NotFoundObjectResult() :> IActionResult
         with
             | :? AggregateException as ex -> NotFoundObjectResult(ex.Message) :> IActionResult
+     
+     
+    [<HttpGet("top")>]
+    member this.GetTop() =
+        let url = "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false&price_change_percentage=24h"
+        // let response = this.getContents(url)
+        let responseTask = httpClient.GetStringAsync(url)
+        let response = responseTask.Result
+        
+        let coins = JObject.Parse(response).ToObject<Coin[]>()
+        let topCoins = coins
+                       |> Array.sortByDescending (fun coin -> coin.price_change_percentage_24h_in_currency) 
+                       |> Array.take 10
+        
+        OkObjectResult(topCoins) :> IActionResult
+        
+        
+    
