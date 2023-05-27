@@ -8,6 +8,7 @@
 
     <ItemGroup>
         <Compile Include="Controllers\CoinController.fs" />
+        <Compile Include="Controllers\UtilsController.fs" />
         <Compile Include="Program.fs" />
     </ItemGroup>
 
