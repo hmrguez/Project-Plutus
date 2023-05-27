@@ -9,12 +9,12 @@ open FluentAssertions
 [<Collection("CryptoController Tests")>]
 type CryptoControllerTests() =
     let httpClient = new HttpClient()
-    let controller = new CryptoController()
+    let controller = new CoinController()
 
     [<Fact>]
     member this.``Get Crypto Price for Bitcoin returns Ok with Price``() =
         // Arrange
-        let controller = CryptoController()
+        let controller = CoinController()
         let name = "bitcoin"
 
         // Act
@@ -28,7 +28,7 @@ type CryptoControllerTests() =
 
     member this. ``Get Crypto Price for Invalid Name returns BadRequest``() =
         // Arrange
-        let controller = CryptoController()
+        let controller = CoinController()
         let name = "invalid-name"
 
         // Act

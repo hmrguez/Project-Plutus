@@ -2,17 +2,16 @@ namespace Project_Plutus.Controllers
 
 open System.Net.Http
 open Microsoft.AspNetCore.Mvc
-open Newtonsoft.Json
 open Newtonsoft.Json.Linq
 
 [<ApiController>]
 [<Route("[controller]")>]
-type CryptoController() =
+type CoinController() =
     inherit ControllerBase()
 
     let httpClient = new HttpClient()
 
-    [<HttpGet("{name}")>]
+    [<HttpGet("price/{name}")>]
     member this.Get(name: string) =
         let response = httpClient.GetAsync($"https://api.coingecko.com/api/v3/simple/price?ids={name}&vs_currencies=usd").Result
         let content = response.Content.ReadAsStringAsync().Result
