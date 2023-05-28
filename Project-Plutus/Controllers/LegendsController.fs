@@ -22,7 +22,7 @@ type LegendsController() =
 
     let mutable connString = "Server=localhost\SQLEXPRESS;Database=PlutusDB;Encrypt=False;Trusted_Connection=True"
 
-    member private this.GetConnection () =
+    member this.GetConnection () =
         new SqlConnection(connString)
 
     member this.SetConnectionString(newConnectionString: string) =

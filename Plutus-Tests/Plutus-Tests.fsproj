@@ -12,10 +12,13 @@
         <Compile Include="Program.fs" />
         <Compile Include="ControllerTests\CoinControllerTests.fs" />
         <Compile Include="ControllerTests\UtilsControllerTests.fs" />
+        <Compile Include="ControllerTests\LegendsControllerTests.fs" />
     </ItemGroup>
 
     <ItemGroup>
+        <PackageReference Include="Dapper" Version="2.0.123" />
         <PackageReference Include="FluentAssertions" Version="6.11.0" />
+        <PackageReference Include="Microsoft.Data.SqlClient" Version="5.2.0-preview1.23109.1" />
         <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.3.2" />
         <PackageReference Include="xunit" Version="2.4.2" />
         <PackageReference Include="xunit.runner.visualstudio" Version="2.4.5">

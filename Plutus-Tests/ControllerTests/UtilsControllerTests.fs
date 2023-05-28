@@ -20,7 +20,6 @@ type UtilsControllerTests() =
 
 
 
-let [<EntryPoint>] main _ = 0
 
 
 
