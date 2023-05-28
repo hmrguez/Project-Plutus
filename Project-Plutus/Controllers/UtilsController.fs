@@ -3,7 +3,7 @@ namespace Project_Plutus.Controllers
 open Microsoft.AspNetCore.Mvc
 
 [<ApiController>]
-[<Route("utils")>]
+[<Route("[controller]")>]
 type UtilsController() =
     inherit ControllerBase()
 

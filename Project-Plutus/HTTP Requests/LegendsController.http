@@ -1,0 +1,37 @@
+### Get all legends
+GET https://localhost:7202/legends HTTP/1.1
+
+### Get a single legend by ID
+GET https://localhost:7202/legends/1
+
+### Add a new legend
+POST https://localhost:7202/legends
+Content-Type: application/json
+
+{
+    "name": "Legend1",
+    "armor": "Armor1",
+    "weapon": "Weapon1",
+    "race": "Race1",
+    "specialization": "Classes1",
+    "pet": "Pet1",
+    "expLevel": 1
+}
+
+### Update an existing legend
+PUT https://localhost:7202/legends/1
+Content-Type: application/json
+
+{
+    "id": 1,
+    "name": "Legend1 Updated",
+    "armor": "Armor1 Updated",
+    "weapon": "Weapon1 Updated",
+    "race": "Race1 Updated",
+    "specialization": "Classes1 Updated",
+    "pet": "Pet1 Updated",
+    "expLevel": 2
+}
+
+### Delete an existing legend
+DELETE https://localhost:7202/legends/1
