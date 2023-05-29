@@ -16,33 +16,47 @@ variables:
   buildPlatform: 'Any CPU'
   buildConfiguration: 'Release'
 
-steps:
-- task: NuGetToolInstaller@1
-
-- task: NuGetCommand@2
-  inputs:
-    restoreSolution: '$(solution)'
-
-- task: VSBuild@1
-  inputs:
-    solution: '$(solution)'
-    msbuildArgs: '/p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:PackageLocation="$(build.artifactStagingDirectory)"'
-    platform: '$(buildPlatform)'
-    configuration: '$(buildConfiguration)'
-
-- task: DotNetCoreCLI@2
-  inputs:
-    command: 'test'
-    projects: 'Plutus-Tests'
-
-- task: GitHubRelease@1
-  inputs:
-    gitHubConnection: 'github'
-    repositoryName: 'vekt0R-HUB/Project-Plutus'
-    action: 'create'
-    target: '$(Build.SourceVersion)'
-    tagSource: 'userSpecifiedTag'
-    tag: 'latest'
-    changeLogCompareToRelease: 'lastFullRelease'
-    changeLogType: 'commitBased'
-    
+stages:
+  - stage: Build
+    jobs:
+      - job: Restore
+        steps:
+        - task: NuGetToolInstaller@1
+        
+        - task: NuGetCommand@2
+          inputs:
+            restoreSolution: '$(solution)'
+      
+      - job: Build
+        steps:
+        - task: VSBuild@1
+          inputs:
+            solution: '$(solution)'
+            msbuildArgs: '/p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:PackageLocation="$(build.artifactStagingDirectory)"'
+            platform: '$(buildPlatform)'
+            configuration: '$(buildConfiguration)'
+            
+  - stage: Test
+    jobs:
+      - job: Test
+        steps:
+        - task: DotNetCoreCLI@2
+          inputs:
+            command: 'test'
+            projects: 'Plutus-Tests'
+            
+  - stage: Deploy
+    jobs:
+      - job: Deploy to Github
+        steps:
+        - task: GitHubRelease@1
+          inputs:
+            gitHubConnection: 'github'
+            repositoryName: 'vekt0R-HUB/Project-Plutus'
+            action: 'create'
+            target: '$(Build.SourceVersion)'
+            tagSource: 'userSpecifiedTag'
+            tag: 'latest'
+            changeLogCompareToRelease: 'lastFullRelease'
+            changeLogType: 'commitBased'
+        
