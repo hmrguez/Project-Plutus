@@ -2,7 +2,7 @@
 GET https://localhost:7202/legends HTTP/1.1
 
 ### Get a single legend by ID
-GET https://localhost:7202/legends/1
+GET https://localhost:7202/legends/12
 
 ### Add a new legend
 POST https://localhost:7202/legends
@@ -19,11 +19,11 @@ Content-Type: application/json
 }
 
 ### Update an existing legend
-PUT https://localhost:7202/legends/1
+PUT https://localhost:7202/legends/1002
 Content-Type: application/json
 
 {
-    "id": 1,
+    "id": 1002,
     "name": "Legend1 Updated",
     "armor": "Armor1 Updated",
     "weapon": "Weapon1 Updated",
@@ -34,4 +34,4 @@ Content-Type: application/json
 }
 
 ### Delete an existing legend
-DELETE https://localhost:7202/legends/1
+DELETE https://localhost:7202/legends/1002
