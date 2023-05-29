@@ -47,7 +47,7 @@ stages:
             
   - stage: Deploy
     jobs:
-      - job: Deploy to Github
+      - job: Deploy_to_Github
         steps:
         - task: GitHubRelease@1
           inputs:
