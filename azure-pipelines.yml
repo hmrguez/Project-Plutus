@@ -19,11 +19,14 @@ variables:
 
 steps:
 - task: NuGetToolInstaller@1
+  displayName: 'Install Nugget'
 
 - task: NuGetCommand@2
+  displayName: 'Restore'
   inputs:
     restoreSolution: '$(solution)'    
 - task: VSBuild@1
+  displayName: 'Build'
   inputs:
     solution: '$(solution)'
     msbuildArgs: '/p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:PackageLocation="$(build.artifactStagingDirectory)"'
@@ -31,16 +34,19 @@ steps:
     configuration: '$(buildConfiguration)'
 
 - task: DotNetCoreCLI@2
+  displayName: 'Test'
   inputs:
     command: 'test'
     projects: 'Plutus-Tests'
 
 - task: GitHubRelease@1
+  displayName: 'Release to Github'
   inputs:
     gitHubConnection: 'github'
     repositoryName: 'vekt0R-HUB/Project-Plutus'
     action: 'create'
     target: '$(Build.SourceVersion)'
     tagSource: 'gitTag'
+    tagPattern: 'v1.*'
     changeLogCompareToRelease: 'lastFullRelease'
     changeLogType: 'commitBased'
