@@ -50,3 +50,5 @@ steps:
     tagPattern: 'v1.*'
     changeLogCompareToRelease: 'lastFullRelease'
     changeLogType: 'commitBased'
+
+#
