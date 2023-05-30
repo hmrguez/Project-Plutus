@@ -1,7 +1,6 @@
 module UtilsControllerTests
 
 open FluentAssertions
-open Microsoft.AspNetCore.Mvc
 open Xunit
 open Project_Plutus.Controllers
 
