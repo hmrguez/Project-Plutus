@@ -12,6 +12,7 @@
         <Compile Include="ControllerTests\CoinControllerTests.fs" />
         <Compile Include="ControllerTests\UtilsControllerTests.fs" />
         <Compile Include="ControllerTests\LegendsControllerTests.fs" />
+        <Compile Include="LogicTests\GenerateSeedTests.fs" />
         <Compile Include="Program.fs" />
     </ItemGroup>
 

@@ -35,3 +35,6 @@ Content-Type: application/json
 
 ### Delete an existing legend
 DELETE https://localhost:7202/legends/1002
+
+### Generate new legend
+POST https://localhost:7202/legends/generate/Gandalf

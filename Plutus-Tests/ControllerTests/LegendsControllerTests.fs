@@ -1,6 +1,5 @@
 module LegendsControllerTests
 
-open System
 open System.Collections.Generic
 open Microsoft.AspNetCore.Mvc
 open Xunit
@@ -10,10 +9,7 @@ open Project_Plutus.Controllers
 open Project_Plutus.Interfaces
 open Project_Plutus.Models
 
-[<Collection("CoinController Tests")>]
-
-
- 
+[<Collection("LegendsController Tests")>]
 type LegendsControllerTests() =
     let legendRepositoryMock = Mock<ILegendRepository>()
     let legendsController = LegendsController(legendRepositoryMock.Object)

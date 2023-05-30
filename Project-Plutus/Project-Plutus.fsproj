@@ -10,6 +10,8 @@
     
     
     <ItemGroup>
+        <Compile Include="Data\DataLists.fs" />
+        <Compile Include="Data\GenerateSeed.fs" />
         <Compile Include="Models\Legend.fs" />
         <Compile Include="Interfaces\ILegendRepository.fs" />
         <Compile Include="Repositories\LegendSqlRepository.fs" />
@@ -22,6 +24,7 @@
       <Content Include="HTTP Requests\CryptoController.http" />
       <Content Include="HTTP Requests\LegendsController.http" />
       <Compile Include="Program.fs" />
+      
     </ItemGroup>
 
     <ItemGroup>

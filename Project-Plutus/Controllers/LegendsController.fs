@@ -1,6 +1,7 @@
 namespace Project_Plutus.Controllers
 
 open Microsoft.AspNetCore.Mvc
+open Project_Plutus.Data
 open Project_Plutus.Interfaces
 open Project_Plutus.Models
 
@@ -37,3 +38,15 @@ type LegendsController(legendRepository : ILegendRepository) =
         let deletedRows = legendRepository.RemoveLegendById(id)
         if not deletedRows then NotFoundObjectResult() :> IActionResult
         else NoContentResult() :> IActionResult
+    
+    [<HttpPost("generate/{name}")>]
+    member this.Generate(name: string) =
+        let randomArmor = GenerateSeed.seed "armor"
+        let randomWeapon = GenerateSeed.seed "weapon"
+        let randomPet = GenerateSeed.seed "pet"
+        let randomSpec = GenerateSeed.seed "spec"
+        let randomRace = GenerateSeed.seed "race"
+        let legend = Legend(-1, name, randomArmor, randomWeapon, randomRace, randomSpec, randomPet, 1)
+        legendRepository.InsertLegend(legend)
+        NoContentResult() :> IActionResult
+    
