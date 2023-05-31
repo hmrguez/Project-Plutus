@@ -38,11 +38,4 @@
       <ProjectReference Include="..\Project-Plutus\Project-Plutus.fsproj" />
     </ItemGroup>
 
-    <ItemGroup>
-      <Content Include="..\.dockerignore">
-        <Link>.dockerignore</Link>
-      </Content>
-      <Content Include="Dockerfile" />
-    </ItemGroup>
-
 </Project>
