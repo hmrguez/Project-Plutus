@@ -11,6 +11,7 @@
         <Compile Include="Data\DataLists.fs" />
         <Compile Include="Data\GenerateSeed.fs" />
         <Compile Include="Models\Legend.fs" />
+        <Compile Include="Models\User.fs" />
         <Compile Include="Interfaces\ILegendRepository.fs" />
         <Compile Include="Repositories\LegendSqlRepository.fs" />
         <Compile Include="Controllers\CoinController.fs" />

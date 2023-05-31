@@ -46,7 +46,7 @@ type LegendsController(legendRepository : ILegendRepository) =
         let randomPet = GenerateSeed.seed "pet"
         let randomSpec = GenerateSeed.seed "spec"
         let randomRace = GenerateSeed.seed "race"
-        let legend = Legend(-1, name, randomArmor, randomWeapon, randomRace, randomSpec, randomPet, 1)
+        let legend = Legend(-1, name, randomArmor, randomWeapon, randomRace, randomSpec, randomPet, 1, null, false)
         legendRepository.InsertLegend(legend)
         NoContentResult() :> IActionResult
     
