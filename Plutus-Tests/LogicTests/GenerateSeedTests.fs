@@ -1,4 +1,4 @@
-// module GenerateSeedTests
+module GenerateSeedTests
 
 // open Xunit
 // open FluentAssertions
