@@ -21,6 +21,10 @@
     </ItemGroup>
 
     <ItemGroup>
+      <Content Include="..\.dockerignore">
+        <Link>.dockerignore</Link>
+      </Content>
+      <Content Include="Dockerfile" />
       <Content Include="HTTP Requests\CryptoController.http" />
       <Content Include="HTTP Requests\LegendsController.http" />
       <Compile Include="Program.fs" />

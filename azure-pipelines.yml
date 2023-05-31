@@ -56,4 +56,5 @@ steps:
     containerRegistry: 'docker-hub'
     repository: 'plutus'
     command: 'build'
-    Dockerfile: 'dockerfile'
+    Dockerfile: 'Project-Plutus/Dockerfile'
+    buildContext: './'
