@@ -50,3 +50,10 @@ steps:
     tagPattern: 'v1.*'
     changeLogCompareToRelease: 'lastFullRelease'
     changeLogType: 'commitBased'
+
+- task: Docker@2
+  inputs:
+    containerRegistry: 'docker-hub'
+    repository: 'plutus'
+    command: 'build'
+    Dockerfile: 'dockerfile'
