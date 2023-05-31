@@ -13,7 +13,9 @@
         <Compile Include="Models\Legend.fs" />
         <Compile Include="Models\User.fs" />
         <Compile Include="Interfaces\ILegendRepository.fs" />
+        <Compile Include="Interfaces\IUserRepository.fs" />
         <Compile Include="Repositories\LegendSqlRepository.fs" />
+        <Compile Include="Repositories\UserSqlRepository.fs" />
         <Compile Include="Controllers\CoinController.fs" />
         <Compile Include="Controllers\UtilsController.fs" />
         <Compile Include="Controllers\LegendsController.fs" />
