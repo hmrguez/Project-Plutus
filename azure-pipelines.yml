@@ -1,7 +1,5 @@
 # ASP.NET
 
-
-
 # Build and test ASP.NET projects.
 # Add steps that publish symbols, save build artifacts, deploy, and more:
 # https://docs.microsoft.com/azure/devops/pipelines/apps/aspnet/build-aspnet-4
@@ -51,10 +49,18 @@ steps:
     changeLogCompareToRelease: 'lastFullRelease'
     changeLogType: 'commitBased'
 
+#- task: Docker@2
+#  inputs:
+#    containerRegistry: 'docker-hub'
+#    repository: 'plutus'
+#    command: 'build'
+#    Dockerfile: 'Project-Plutus/Dockerfile'
+#    buildContext: './'
+    
 - task: Docker@2
   inputs:
     containerRegistry: 'docker-hub'
-    repository: 'plutus'
-    command: 'build'
+    repository: 'zealotalgo/project-plutus'
+    command: 'buildAndPush'
     Dockerfile: 'Project-Plutus/Dockerfile'
     buildContext: './'
