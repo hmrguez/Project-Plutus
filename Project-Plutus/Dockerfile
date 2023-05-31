@@ -1,7 +1,4 @@
-﻿FROM mcr.microsoft.com/dotnet/runtime:7.0 AS base-linux
-WORKDIR /app
-
-FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
+﻿FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
 WORKDIR /src
 COPY ["Project-Plutus/Project-Plutus.fsproj", "Project-Plutus/"]
 RUN dotnet restore "Project-Plutus/Project-Plutus.fsproj"
@@ -12,10 +9,29 @@ RUN dotnet build "Project-Plutus.fsproj" -c Release -o /app/build
 FROM build AS publish
 RUN dotnet publish "Project-Plutus.fsproj" -c Release -o /app/publish /p:UseAppHost=false
 
-FROM base-linux AS final
+FROM mcr.microsoft.com/dotnet/aspnet:7.0-alpine AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
 ENTRYPOINT ["dotnet", "Project-Plutus.dll"]
+
+#FROM mcr.microsoft.com/dotnet/runtime:7.0 AS base-linux
+#WORKDIR /app
+#
+#FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
+#WORKDIR /src
+#COPY ["Project-Plutus/Project-Plutus.fsproj", "Project-Plutus/"]
+#RUN dotnet restore "Project-Plutus/Project-Plutus.fsproj"
+#COPY . .
+#WORKDIR "/src/Project-Plutus"
+#RUN dotnet build "Project-Plutus.fsproj" -c Release -o /app/build
+#
+#FROM build AS publish
+#RUN dotnet publish "Project-Plutus.fsproj" -c Release -o /app/publish /p:UseAppHost=false
+#
+#FROM base-linux AS final
+#WORKDIR /app
+#COPY --from=publish /app/publish .
+#ENTRYPOINT ["dotnet", "Project-Plutus.dll"]
 
 
 #FROM mcr.microsoft.com/dotnet/aspnet:7.0 AS base
