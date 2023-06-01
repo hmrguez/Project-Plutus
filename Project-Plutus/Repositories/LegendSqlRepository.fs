@@ -17,7 +17,7 @@ type LegendSqlRepository() =
             
         member this.GetLegendById(id) =
             use conn = this.GetConnection()
-            let query = "SELECT id, name, armor, weapon, race, specialization, pet, expLevel FROM Legends WHERE id = @id"
+            let query = "SELECT * FROM Legends WHERE id = @id"
             
             let resultOpt =
                 try
@@ -36,8 +36,8 @@ type LegendSqlRepository() =
             
         member this.UpdateLegend(legend: Legend) =
             use conn = this.GetConnection()
-            let query = "UPDATE Legends SET name = @name, armor = @armor, weapon = @weapon, race = @race, specialization = @specialization, pet = @pet, expLevel = @expLevel WHERE id = @id"
-            let updatedRows = conn.Execute(query, {| id = legend.Id; name = legend.Name; armor = legend.Armor; weapon = legend.Weapon; race = legend.Race; specialization = legend.Specialization; pet = legend.Pet; expLevel = legend.ExpLevel |})
+            let query = "UPDATE Legends SET name = @name, armor = @armor, weapon = @weapon, race = @race, specialization = @specialization, pet = @pet, expLevel = @expLevel, owner = @owner, forSale = @forSale WHERE id = @id"
+            let updatedRows = conn.Execute(query, {| id = legend.Id; name = legend.Name; armor = legend.Armor; weapon = legend.Weapon; race = legend.Race; specialization = legend.Specialization; pet = legend.Pet; expLevel = legend.ExpLevel; owner = legend.Owner; forSale = legend.ForSale |})
             updatedRows > 0
             
         member this.InsertLegend(legend) =

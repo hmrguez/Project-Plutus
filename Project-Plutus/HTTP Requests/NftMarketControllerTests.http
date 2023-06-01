@@ -1,0 +1,12 @@
+### Put an NFT on sale
+POST https://localhost:7202/NftMarket/sell/1003 HTTP/1.1
+
+### Buy an nft
+POST https://localhost:7202/NftMarket/buy HTTP/1.1
+Content-Type: application/json
+
+{
+  "userName": "Legend1",
+  "nftId": 2,
+  "amount": 10
+}
