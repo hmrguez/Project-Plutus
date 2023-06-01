@@ -15,6 +15,7 @@
         <Compile Include="ControllerTests\LegendsControllerTests.fs" />
         <Compile Include="ControllerTests\UsersControllerTests.fs" />
         <Compile Include="ControllerTests\NftMarketControllerTests.fs" />
+        <Compile Include="ControllerTests\VillageControllerTests.fs" />
         <Compile Include="LogicTests\GenerateSeedTests.fs" />
         <Compile Include="Program.fs" />
     </ItemGroup>

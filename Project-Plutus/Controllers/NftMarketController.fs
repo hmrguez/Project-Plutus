@@ -50,17 +50,18 @@ type NftMarketController(userRepository : IUserRepository, legendRepository: ILe
             // Create a new user for the owner updating its PCoin with the incoming amount
             let owner = userRepository.GetByName(legend.Owner).Value
             let ownerPrime = User(owner.Name, owner.PCoin + amount)
-            userRepository.Update(ownerPrime) |> ignore
+            let u1 = userRepository.Update(ownerPrime)
             
             // Create a new user for the user updating its PCoin with the outgoing amount
             let userPrime = User(user.Name, user.PCoin - amount)
-            userRepository.Update(userPrime) |> ignore
+            let u2 = userRepository.Update(userPrime)
             
             // Changing the legend's owner
             let legendPrime = Legend(legend.Id, legend.Name, legend.Armor, legend.Weapon, legend.Race, legend.Specialization,
                                      legend.Pet, legend.ExpLevel, userPrime.Name, false)
-            legendRepository.UpdateLegend(legendPrime) |> ignore
+            let u3 = legendRepository.UpdateLegend(legendPrime)
             
+            if not (u1 && u2 && u3) then raise (new System.Exception("Something went wrong"))
             OkObjectResult() :> IActionResult
  
         with ex ->

@@ -1,5 +1,6 @@
 namespace Project_Plutus.Controllers
 
+open System
 open Microsoft.AspNetCore.Mvc
 open Project_Plutus.Interfaces
 open Project_Plutus.Models
@@ -21,8 +22,9 @@ type VillageController(userRepository: IUserRepository, legendRepository: ILegen
             let newOwner = User(owner.Name, owner.PCoin + 10)
             try
                 // We try updating the db
-                legendRepository.UpdateLegend(newLegend) |> ignore
-                userRepository.Update(newOwner) |> ignore
+                let u1 = legendRepository.UpdateLegend(newLegend)
+                let u2 = userRepository.Update(newOwner)
+                if not (u1 && u2) then raise (new System.Exception("Something went wrong"))
                 OkObjectResult() :> IActionResult
             with ex ->
                 // If something happened we rollback changes
