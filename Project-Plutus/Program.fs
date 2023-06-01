@@ -16,6 +16,7 @@ module Program =
 
         builder.Services.AddControllers()
         builder.Services.AddSingleton<ILegendRepository, LegendSqlRepository>()
+        builder.Services.AddSingleton<IUserRepository, UserSqlRepository>()
         
         let app = builder.Build()
 

@@ -19,8 +19,10 @@
         <Compile Include="Controllers\CoinController.fs" />
         <Compile Include="Controllers\UtilsController.fs" />
         <Compile Include="Controllers\LegendsController.fs" />
+        <Compile Include="Controllers\UsersController.fs" />
         <Content Include="HTTP Requests\CryptoController.http" />
         <Content Include="HTTP Requests\LegendsController.http" />
+        <Content Include="HTTP Requests\UserController.http" />
     </ItemGroup>
 
     <ItemGroup>

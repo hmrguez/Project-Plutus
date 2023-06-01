@@ -1,0 +1,26 @@
+### Get all user
+GET https://localhost:7202/users HTTP/1.1
+
+### Get a single user by ID
+GET https://localhost:7202/users/Legend2
+
+### Add a new user
+POST https://localhost:7202/users
+Content-Type: application/json
+
+{
+  "name": "Legend3"
+}
+
+### Update an existing user
+PUT https://localhost:7202/users/Legend3
+Content-Type: application/json
+
+{
+  "name": "Legend4",
+  "pCoin": 4
+}
+
+### Delete an existing user
+DELETE https://localhost:7202/users/Legend2
+

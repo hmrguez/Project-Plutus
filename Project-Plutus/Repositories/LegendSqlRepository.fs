@@ -23,7 +23,6 @@ type LegendSqlRepository() =
                 try
                     Some(conn.QueryFirst<Legend>(query, {| id = id |}))
                 with ex ->
-                    printfn "An exception occurred: %s" ex.Message
                     None
 
             resultOpt
