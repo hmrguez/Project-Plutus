@@ -1,5 +1,1 @@
-GET https://localhost:7202/Crypto/bitcoin HTTP/1.1
-
-###
-
-GET https://localhost:7202/coin/top HTTP/1.1
+POST https://localhost:7202/coin/top HTTP/1.1

@@ -27,10 +27,14 @@
         <Content Include="HTTP Requests\LegendsController.http" />
         <Content Include="HTTP Requests\NftMarketControllerTests.http" />
         <Content Include="HTTP Requests\UserController.http" />
+        <Content Include="Dockerfile" />
+        <Content Include="..\.dockerignore">
+            <Link>.dockerignore</Link>
+        </Content>
     </ItemGroup>
 
     <ItemGroup>
-      <Content Include="Dockerfile" />
+      <Content Include="Dockerfile-Linux" />
       <Compile Include="Program.fs" />
       
     </ItemGroup>
