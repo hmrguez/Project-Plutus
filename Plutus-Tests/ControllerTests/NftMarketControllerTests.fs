@@ -101,7 +101,7 @@ type NftMarketControllerTests() =
         result.Value.Should().BeNull("")
         
     [<Fact>]
-    member this.``UserBuyNft should return BadRequest if the transaction isn't successful``() =
+    member this.``UserBuyNft should return ConflictObjectResult if the transaction isn't successful``() =
         // Arrange
         let legend = Legend(1, "Legend 1", "Armor 1", "Weapon 1", "Race 1", "Specialization 1", "Pet 1", 100, "Bob", true)
         let user = User("Alice",200)
@@ -126,7 +126,7 @@ type NftMarketControllerTests() =
         // Act & Assert
         try
             let result = controller.UserBuyNft(UserBuyLegendDto("Alice", 1, 100))
-            result.Should().BeOfType<BadRequestObjectResult>("") |> ignore
+            result.Should().BeOfType<ConflictObjectResult>("") |> ignore
         with ex ->
             Assert.True(true)
         

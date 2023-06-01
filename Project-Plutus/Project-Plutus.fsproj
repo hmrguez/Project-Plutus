@@ -22,6 +22,7 @@
         <Compile Include="Controllers\LegendsController.fs" />
         <Compile Include="Controllers\UsersController.fs" />
         <Compile Include="Controllers\NftMarketController.fs" />
+        <Compile Include="Controllers\VillageController.fs" />
         <Content Include="HTTP Requests\CryptoController.http" />
         <Content Include="HTTP Requests\LegendsController.http" />
         <Content Include="HTTP Requests\NftMarketControllerTests.http" />

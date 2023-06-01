@@ -72,4 +72,4 @@ type NftMarketController(userRepository : IUserRepository, legendRepository: ILe
             userRepository.Update(owner) |> ignore
             legendRepository.UpdateLegend(legend) |> ignore
             
-            BadRequestObjectResult("The transaction wasn't successful and we rolled back changes") :> IActionResult
+            ConflictObjectResult("The transaction wasn't successful and we rolled back changes") :> IActionResult
