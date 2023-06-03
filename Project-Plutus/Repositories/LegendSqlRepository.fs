@@ -42,7 +42,7 @@ type LegendSqlRepository() =
             
         member this.InsertLegend(legend) =
             use conn = this.GetConnection()
-            let query = "INSERT INTO Legends (name, armor, weapon, race, specialization, pet, expLevel) VALUES (@name, @armor, @weapon, @race, @specialization, @pet, @expLevel)"
+            let query = "INSERT INTO Legends (name, armor, weapon, race, specialization, pet, expLevel, owner, forSale) VALUES (@name, @armor, @weapon, @race, @specialization, @pet, @expLevel, @owner, @forSale)"
             conn.Execute(query, legend) |> ignore
             ()
         
