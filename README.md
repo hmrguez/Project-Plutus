@@ -41,16 +41,15 @@ The CI/CD pipeline for this project has several stages, as follows:
     - **Build and Deploy Docker Image**: This stage builds a Docker image of the app using the Dockerfile in the project root. The image is then pushed to Docker Hub.
 
 ```mermaid
-graph TD;
-  A(Restore and Build) --> B(Test);
-  B --> C{Deploy Release or Docker Image?};
-  C --> D(Deploy Release);
+graph LR;
+  A(Restore and Build) --> C(Test);
+  C --> D(Deploy Github Release);
   C --> E(Build and Deploy Docker Image);
 ```
 
 ## Lore
 
-Welcome to the world of Plutus, where brave warriors and powerful beasts roam the land. In this world, users can buy and sell legendary NFTs called Legends, each with their own unique attributes like weapons, armor, and pets. But beware, these Legends are not easily tamed - they must be trained in the Village by completing dangerous quests and challenging jobs.
+Welcome to the world of Plutus, where brave warriors and powerful beasts roam the land. In this world, users can buy and sell legendary NFTs called Legends, each with their own unique attributes like weapons, armor, classes and pets. But beware, these Legends are not easily tamed - they must be trained in the Village by completing dangerous quests and challenging jobs.
 
 The Legends in Plutus are generated using a powerful algorithm that selects from a vast array of available options, including Common, Rare, and Legendary attributes. Using a weighted random algorithm, each Legend is given a unique set of attributes that make it one-of-a-kind.
 
