@@ -1,0 +1,15 @@
+Privacy enhancing technologies (PETs) are tools, techniques, and protocols that are designed to improve the privacy and confidentiality of data and transactions on blockchain networks. PETs aim to address the inherent transparency and immutability of blockchain technology, which can make it difficult to keep sensitive information private.
+
+Some examples of privacy enhancing technologies include:
+
+1. Zero-knowledge proofs: Zero-knowledge proofs (ZKPs) allow for the verification of a statement or claim without revealing any information about the underlying data. This can be used to protect the privacy of sensitive information, such as personal identity or financial transactions.
+
+2. Ring signatures: Ring signatures allow for the creation of a signature that could have been produced by any member of a group, without revealing the identity of the actual signer. This can be used to protect the privacy of transaction participants.
+
+3. Homomorphic encryption: Homomorphic encryption allows for the processing of encrypted data without the need to decrypt it first. This can be used to protect the privacy of data while still allowing for computations to be performed on it.
+
+4. Stealth addresses: Stealth addresses are unique addresses that can be generated for each transaction, making it difficult to track the flow of funds or link transactions to specific addresses.
+
+5. Private smart contracts: Private smart contracts allow for the execution of smart contracts while keeping the details of the contract and its execution private. This can be used to protect the privacy of sensitive business transactions.
+
+Privacy enhancing technologies are important for ensuring the privacy and confidentiality of sensitive data and transactions on blockchain networks. However, they can also introduce additional complexity and potential security risks, so it's important to carefully evaluate the benefits and trade-offs of using PETs for different blockchain applications.
