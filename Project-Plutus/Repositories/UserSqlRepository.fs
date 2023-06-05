@@ -4,12 +4,12 @@ namespace Project_Plutus.Repositories
 
 open Dapper
 open Microsoft.Data.SqlClient
+open Microsoft.Extensions.Configuration
 open Project_Plutus.Interfaces
 open Project_Plutus.Models
 
-type UserSqlRepository() =
-    
-    let connectionString = "Server=localhost\SQLEXPRESS;Database=PlutusDB;Encrypt=False;Trusted_Connection=True"
+type UserSqlRepository(config: IConfiguration) =
+    let connectionString = config.GetConnectionString("DefaultConnection")
     member this.GetConnection () =
             new SqlConnection(connectionString)
     

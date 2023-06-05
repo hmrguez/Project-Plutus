@@ -1,14 +1,15 @@
 namespace Project_Plutus.Repositories
 
 open Microsoft.Data.SqlClient
+open Microsoft.Extensions.Configuration
 open Project_Plutus.Interfaces
 open Dapper
 open Project_Plutus.Models
 
-type LegendSqlRepository() =
-    let mutable connString = "Server=localhost\SQLEXPRESS;Database=PlutusDB;Encrypt=False;Trusted_Connection=True"
+type LegendSqlRepository(config: IConfiguration) =
+    let connectionString = config.GetConnectionString("DefaultConnection")
     member this.GetConnection () =
-            new SqlConnection(connString)
+            new SqlConnection(connectionString)
             
     interface ILegendRepository with
         member this.GetAllLegends() =

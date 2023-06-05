@@ -10,6 +10,7 @@
     <ItemGroup>
         <Compile Include="Data\DataLists.fs" />
         <Compile Include="Data\GenerateSeed.fs" />
+        <Compile Include="Data\News.fs" />
         <Compile Include="Models\Dtos\UserBuyLegendDto.fs" />
         <Compile Include="Models\Legend.fs" />
         <Compile Include="Models\User.fs" />
@@ -23,6 +24,7 @@
         <Compile Include="Controllers\UsersController.fs" />
         <Compile Include="Controllers\NftMarketController.fs" />
         <Compile Include="Controllers\VillageController.fs" />
+        <Compile Include="Controllers\NewsController.fs" />
         <Content Include="HTTP Requests\CryptoController.http" />
         <Content Include="HTTP Requests\LegendsController.http" />
         <Content Include="HTTP Requests\NftMarketControllerTests.http" />

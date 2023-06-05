@@ -73,28 +73,28 @@ To get started with Project-Plutus, follow the instructions below:
 1. Clone the repository to your local machine.
 2. Install the necessary dependencies by running `dotnet restore`.
 3. Create the database and then the tables using the following commands
-```sql
-CREATE TABLE User (
-  Name varchar(255),
-  PCoin int,
-  PRIMARY KEY (Name)
-);
-
-CREATE TABLE Legend (
-  Id int IDENTITY(1,1),
-  Name varchar(255),
-  Armor varchar(255),
-  Weapon varchar(255),
-  Specialization varchar(255),
-  Race varchar(255),
-  Pet varchar(255),
-  ExpLevel int,
-  Owner varchar(255),
-  ForSale bit,
-  PRIMARY KEY (Id),
-  FOREIGN KEY (Owner) REFERENCES User(Name)
-);
-```
+    ```sql
+    CREATE TABLE User (
+      Name varchar(255),
+      PCoin int,
+      PRIMARY KEY (Name)
+    );
+    
+    CREATE TABLE Legend (
+      Id int IDENTITY(1,1),
+      Name varchar(255),
+      Armor varchar(255),
+      Weapon varchar(255),
+      Specialization varchar(255),
+      Race varchar(255),
+      Pet varchar(255),
+      ExpLevel int,
+      Owner varchar(255),
+      ForSale bit,
+      PRIMARY KEY (Id),
+      FOREIGN KEY (Owner) REFERENCES User(Name)
+    );
+    ```
 4. Change the connection string int the repositories to yours
 5. Build the app by running `dotnet build`.
 6. Run the tests by running `dotnet test`.
