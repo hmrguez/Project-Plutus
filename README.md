@@ -1,5 +1,3 @@
-Sure, here's an example outline for your README file:
-
 # Project-Plutus
 
 ## Overview
